@@ -129,6 +129,8 @@ Runtime files are created in `.claude/skillguard/session-state.json` and `.claud
 
 ## Running Experiments
 
+Experiments are conducted using the [SKILL-INJECT benchmark](https://github.com/aisa-group/skill-inject) by Schmotz et al., which evaluates prompt injection vulnerabilities in LLM agent skill files.
+
 ### Obvious injections
 
 ```bash
