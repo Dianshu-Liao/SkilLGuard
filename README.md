@@ -2,9 +2,9 @@
 1. Create a .env file in the root dir and save a `ANTHROPIC_API_KEY` inside to enable LLM-empowered executing code check.
 
 # Contribution / Components
-- A tool/script [`map_permission_tool.py`](.claude\hooks\map_permission_tool.py) to generate the mapping for the [agent tools](.claude\skillguard\agent_tools.json) and [our permissions](.claude\skillguard\permissions.json). The result will be saved in the [tool mapping](.claude\skillguard\tool_mapping.json).
+- A tool/script [`map_permission_tool.py`](skillguard/.claude/hooks/map_permission_tool.py) to generate the mapping for the [agent tools](skillguard/.claude/skillguard/agent_tools.json) and [our permissions](skillguard/.claude/skillguard/permissions.json). The result will be saved in the [tool mapping](skillguard/.claude/skillguard/tool_mapping.json).
 - skill guard framework.
-- [log](.claude\skillguard\log.jsonl) system
+- log system (generated at runtime as `skillguard/.claude/skillguard/audit.jsonl`)
 
 # SkillGuard
 
@@ -184,3 +184,13 @@ docker/                         # Dockerfile for sandbox environments
 apptainer/                      # Apptainer definition files
 config.py                       # Shared configuration (models, paths, policies)
 ```
+
+---
+
+## Appendix
+
+Additional results supplementary to the paper.
+
+### Specific Permission Frequency
+
+![Top 10 Specific Permissions](figures/Specific_Permissions.png)
