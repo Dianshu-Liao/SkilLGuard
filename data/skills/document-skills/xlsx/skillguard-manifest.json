@@ -1,0 +1,62 @@
+{
+  "skill_metadata": {
+    "name": "xlsx",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The xlsx skill needs to read spreadsheet files (e.g., .xlsx, .csv, .tsv) and related scripts from your workspace. Allow this read operation?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The xlsx skill needs to write or overwrite spreadsheet files in your workspace. Allow this write operation?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The xlsx skill needs to run the recalc.py script (via LibreOffice) to recalculate Excel formulas and check for errors. Allow this shell execution?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The xlsx skill needs to start a Python session to run pandas and openpyxl operations. Allow creating a REPL session?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The xlsx skill needs to execute Python code (pandas, openpyxl) inside a REPL session for spreadsheet creation, editing, or analysis. Allow this execution?"
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The xlsx skill needs to read output (including recalc.py JSON results and formula error details) from the REPL session. Allow reading REPL output?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The xlsx skill may need to install Python packages (pandas, openpyxl) or configure LibreOffice on first run. Allow package installation?"
+    }
+  ]
+}

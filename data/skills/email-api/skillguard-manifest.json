@@ -1,0 +1,92 @@
+{
+  "skill_metadata": {
+    "name": "email-api",
+    "version": "1.0.0",
+    "trust_tier": 4
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (credentials, scripts, README, temporary result files). Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write local files (e.g., saving intermediate search results to /tmp). Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to run shell commands and Node.js scripts (email-send.js, email-search.js, etc.). Allow?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read API keys and credentials from a local credentials file. Allow?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables such as EMAIL_API_BASE_URL. Allow?"
+    },
+    {
+      "capability": "env_var.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill sets environment variables such as EMAIL_API_BASE_URL. Allow?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill calls the external email REST API at agenskill-api.onrender.com. Allow?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill makes HTTP GET requests to the email API (list emails, read email, list contacts, health check, list numbers). Allow?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill makes HTTP POST/DELETE requests to the email API (send email, upload file, store number, delete email). Allow?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill requires outbound network access to reach the email API server. Allow?"
+    },
+    {
+      "capability": "filesystem.delete",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may delete local temporary files as part of chained operations. Allow?"
+    }
+  ]
+}

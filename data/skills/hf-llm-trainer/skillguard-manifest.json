@@ -1,0 +1,160 @@
+{
+  "skill_metadata": {
+    "name": "model-trainer",
+    "version": "0.1.0",
+    "trust_tier": 4
+  },
+  "permissions": [
+    {
+      "capability": "mcp.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to invoke MCP tools (hf_jobs, hf_whoami, hf_doc_fetch, hf_doc_search) to submit training jobs, inspect job status, and fetch documentation. Allow this MCP call?"
+    },
+    {
+      "capability": "tool.invoke",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to invoke registered tools such as hf_jobs, hf_whoami, dataset_search, and hub_repo_details. Allow this tool invocation?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill calls Hugging Face Jobs API, Hub API, and Trackio endpoints to submit training jobs, push models, and monitor runs. Allow this external API call?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill fetches content from external URLs including TRL documentation, GitHub raw scripts, Hugging Face Hub files, and Gist URLs. Allow this web fetch?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill submits training job payloads and model pushes to Hugging Face Jobs and Hub endpoints. Allow this web POST request?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill requires outbound network access to reach Hugging Face infrastructure, GitHub, and Trackio services. Allow outbound network access?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may run local shell commands such as pip install, huggingface-cli, hf jobs, uv run, and python scripts. Allow shell execution?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill installs Python packages (trl, peft, trackio, trl-jobs, and others) via pip or uv. Allow package installation?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads the HF_TOKEN secret to authenticate with Hugging Face Hub for pushing trained models. Allow reading this secret?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables such as HF_TOKEN, ADAPTER_MODEL, BASE_MODEL, and OUTPUT_REPO passed to training jobs. Allow reading environment variables?"
+    },
+    {
+      "capability": "env_var.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill sets environment variables (e.g. ADAPTER_MODEL, BASE_MODEL, OUTPUT_REPO) in job configurations. Allow writing environment variables?"
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill reads local files such as requirements.txt, example training scripts, and reference documents from the skill workspace. Allow reading local files?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may write training scripts or other files locally if the user explicitly requests saving them. Allow writing local files?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads training script source code templates (SFT, DPO, GRPO) from the skill's scripts directory. Allow reading source code files?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill loads reference documents, training patterns, hardware guides, and troubleshooting guides from within the skill package as context. Allow loading this context?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill dispatches authored skill resources including reference files and example scripts. Allow loading the skill resources?"
+    },
+    {
+      "capability": "subagent.delegate",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill submits autonomous training jobs to Hugging Face Jobs infrastructure that run independently for hours without further supervision. Allow delegating this autonomous job?"
+    },
+    {
+      "capability": "commit.push",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill pushes trained model weights and checkpoints to Hugging Face Hub repositories using HF_TOKEN. Allow pushing to the remote Hub?"
+    },
+    {
+      "capability": "container.run",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill launches isolated Docker container workloads on Hugging Face Jobs GPU infrastructure to execute training scripts. Allow running containers?"
+    },
+    {
+      "capability": "container.query",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill inspects running job containers on Hugging Face infrastructure to retrieve logs and status. Allow querying container state?"
+    },
+    {
+      "capability": "container.manage",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may cancel running job containers on Hugging Face infrastructure. Allow managing container lifecycle?"
+    }
+  ]
+}

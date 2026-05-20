@@ -1,0 +1,76 @@
+{
+  "skill_metadata": {
+    "name": "risk-metrics-calculation",
+    "version": "0.1.0",
+    "trust_tier": 2
+  },
+  "permissions": [
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute Python code to calculate risk metrics (VaR, CVaR, Sharpe, Sortino, drawdowns, etc.). Please confirm execution."
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to create an interactive Python REPL session to run risk metric calculations. Please confirm."
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute Python code inside a REPL session to compute portfolio risk metrics. Please confirm."
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read output and variable state from the REPL session after running risk calculations. Please confirm."
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., return series CSVs, historical price data) from the workspace to perform risk calculations. Please confirm."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may write risk metric outputs or summary reports to local workspace files. Please confirm."
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read Python source code files (e.g., RiskMetrics, PortfolioRisk, StressTester implementations) from the repository. Please confirm."
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may write or update Python source code files implementing risk metric classes and patterns. Please confirm."
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill requires Python packages (numpy, pandas, scipy) to be installed for risk calculations. Please confirm package installation."
+    }
+  ]
+}

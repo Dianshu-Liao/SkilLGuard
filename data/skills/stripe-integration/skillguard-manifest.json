@@ -1,0 +1,108 @@
+{
+  "skill_metadata": {
+    "name": "stripe-integration",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The stripe-integration skill needs to read local files (e.g., reference docs, asset templates, configuration files) from the workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The stripe-integration skill needs to write or update source files (e.g., stripe-client.py, webhook-handler.py, checkout-config.json) in the workspace. Allow?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The stripe-integration skill needs to read existing source code files to understand the current integration state. Allow?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The stripe-integration skill needs to create or modify source code files implementing Stripe payment flows, webhook handlers, and subscription logic. Allow?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill needs to call the Stripe API (e.g., create checkout sessions, payment intents, subscriptions, customers, refunds, disputes). Allow?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill needs to read sensitive credentials such as the Stripe secret API key (sk_test_... / sk_live_...) and webhook signing secret (whsec_...). Allow?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill needs to read environment variables that may store Stripe API keys and endpoint secrets. Allow?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill may need to fetch Stripe documentation or reference content over HTTP/HTTPS. Allow?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill needs to submit data to Stripe API endpoints (payments, subscriptions, refunds, disputes, webhook registration). Allow?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill requires outbound network access to communicate with the Stripe API and related payment infrastructure. Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill may need to execute shell commands to install dependencies (e.g., pip install stripe) or run test scripts. Allow?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill may need to install the Stripe Python SDK or related packages via a package manager. Allow?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The stripe-integration skill references external documentation files (e.g., references/checkout-flows.md, references/webhook-handling.md) and asset files that need to be loaded into context. Allow?"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "skill_metadata": {
+    "name": "git-advanced-workflows",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute shell commands (git, gh CLI, npm test, scripts) to perform Git operations. Please confirm before proceeding."
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files and directories (e.g., repository contents, changelogs, scripts) within the workspace. Please confirm."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may write or modify files in the workspace (e.g., resolving conflicts, creating worktree directories, writing scripts). Please confirm."
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read version-controlled source files and repository history to support Git operations. Please confirm."
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may create or modify source code files (e.g., resolving rebase/merge conflicts, split-commit staging, partial cherry-pick checkout). Please confirm."
+    },
+    {
+      "capability": "commit.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill creates or rewrites local Git commits, including interactive rebases, squashing, autosquash, split commits, and initial repository commits. Please confirm."
+    },
+    {
+      "capability": "commit.push",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill pushes commits and rewritten history to remote repositories (including force-with-lease pushes and gh pr/release operations). Please confirm."
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill uses the GitHub CLI (gh) to call GitHub API endpoints for managing PRs, issues, releases, secrets, and repository settings. Please confirm."
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may read secret values from environment variables (e.g., AWS_ACCESS_KEY_ID) to set GitHub repository secrets via the gh CLI. Please confirm."
+    },
+    {
+      "capability": "secrets.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill uses 'gh secret set' to create or update repository secrets on GitHub. Please confirm before writing secret values."
+    },
+    {
+      "capability": "secrets.delete",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill uses 'gh secret delete' to remove repository secrets from GitHub. Please confirm before deleting secrets."
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables (e.g., $AWS_ACCESS_KEY_ID) to supply values to GitHub secret management commands. Please confirm."
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill makes outbound network requests via git remote operations (fetch, push, clone) and the GitHub CLI. Please confirm."
+    }
+  ]
+}

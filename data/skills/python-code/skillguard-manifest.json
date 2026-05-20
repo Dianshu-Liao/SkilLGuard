@@ -1,0 +1,73 @@
+{
+  "skill_metadata": {
+    "name": "python-code",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The python-code skill needs to read files in your workspace (source code, configuration, schema files, etc.). Allow this read access?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The python-code skill wants to create or modify files in your workspace (source code, pyproject.toml, requirements.txt, schema.sql, CHANGELOG, etc.). Allow this write?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The python-code skill needs to read version-controlled source files to assist with refactoring, structure, or documentation. Allow this?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The python-code skill wants to create or modify source code files (modules, tests, entry points, docstrings, etc.). Allow this?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The python-code skill wants to run a shell command (e.g., create a virtualenv, install dependencies, or run tests). Review the command and allow?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The python-code skill wants to install packages (e.g., via pip, poetry, or uv). Allow package installation?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The python-code skill needs to read environment variables (e.g., to check for secrets, API keys, or configuration values). Allow this?"
+    },
+    {
+      "capability": "commit.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The python-code skill wants to create a version-control commit (e.g., after a bug fix with a drafted commit message). Allow this?"
+    }
+  ]
+}

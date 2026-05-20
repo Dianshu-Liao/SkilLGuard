@@ -1,0 +1,66 @@
+{
+  "skill_metadata": {
+    "name": "pptx",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The pptx skill needs to read local files (presentations, XML, JSON, markdown, scripts) to analyze and process PowerPoint content."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The pptx skill needs to write files such as HTML slides, JSON inventories, repacked .pptx files, and intermediate working files during presentation creation and editing."
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The pptx skill needs to run shell commands including Python scripts (unpack.py, pack.py, validate.py, inventory.py, replace.py, thumbnail.py, rearrange.py), Node.js scripts (html2pptx.js), markitdown, soffice, and pdftoppm to process presentations."
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The pptx skill may need to install required dependencies such as markitdown, pptxgenjs, playwright, sharp, react-icons, LibreOffice, poppler-utils, or defusedxml."
+    },
+    {
+      "capability": "process.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The pptx skill needs to launch processes such as Python interpreters, Node.js runtimes, LibreOffice, and pdftoppm during presentation processing."
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The pptx skill needs to load and read instruction files such as html2pptx.md and ooxml.md in full before executing presentation workflows."
+    },
+    {
+      "capability": "filesystem.delete",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The pptx skill scripts (pack.py, validate.py) may delete temporary files or failed output files during processing."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "skill_metadata": {
+    "name": "data-storytelling",
+    "version": "0.1.0",
+    "trust_tier": 2
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local data files or existing report files to build narratives. Allow read access within the workspace?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill wants to write generated reports, dashboards, or presentation files to the workspace. Allow write access within the workspace?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill includes Python matplotlib code for chart annotation and visualization generation. Allow execution of this code?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may need to start a Python REPL session to run visualization scripts. Allow creation of a REPL session?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill wants to execute Python code (e.g., matplotlib chart generation) inside a REPL session. Allow execution?"
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read output or rendered results from the REPL session after running visualization code. Allow reading REPL output?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references external resources (e.g., storytellingwithdata.com, duarte.com, Amazon). Allow fetching external web content?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may load or dispatch authored sub-skills as part of presentation or reporting workflows. Allow skill loading?"
+    }
+  ]
+}

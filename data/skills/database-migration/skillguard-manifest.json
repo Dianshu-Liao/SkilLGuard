@@ -1,0 +1,73 @@
+{
+  "skill_metadata": {
+    "name": "database-migration",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The database-migration skill needs to read migration files, schema definitions, SQL templates, and reference documents from the workspace. Allow this access?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The database-migration skill needs to create or modify migration files, schema files, and related scripts in the workspace. Allow this access?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The database-migration skill needs to read existing ORM configuration files and migration source code. Allow this access?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The database-migration skill needs to create or update migration scripts (Sequelize, TypeORM, Prisma) and data transformation code. Allow this access?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The database-migration skill needs to execute migration CLI commands such as 'npx sequelize-cli db:migrate', 'npm run typeorm migration:run', 'npx prisma migrate deploy', and the migration testing script 'scripts/test-migration.sh'. Allow shell execution?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The database-migration skill needs to read environment variables to determine database connection details and dialect settings. Allow reading environment variables?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The database-migration skill needs to load reference documents such as 'references/orm-switching.md', 'references/schema-migration.md', 'references/rollback-strategies.md', and asset templates. Allow loading this context?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The database-migration skill may need to dispatch or load other authored skills during migration workflows. Allow skill dispatch?"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "skill_metadata": {
+    "name": "write-unit-tests",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "allow",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The write-unit-tests skill needs to read source and test files within the workspace to understand existing code structure and test patterns."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The write-unit-tests skill needs to create or modify test files (e.g., Vec.test.ts, SelectTool.test.ts) within the workspace. Please confirm before writing."
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "allow",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The write-unit-tests skill needs to read version-controlled source files in packages/editor and packages/tldraw to understand implementations being tested."
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The write-unit-tests skill needs to create or modify version-controlled test files alongside source files. Please confirm before writing."
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The write-unit-tests skill needs to run test commands (e.g., 'cd packages/tldraw && yarn test run') to verify tests pass. Please confirm before executing."
+    }
+  ]
+}

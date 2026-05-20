@@ -1,0 +1,48 @@
+{
+  "skill_metadata": {
+    "name": "docx",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The docx skill needs to read files (e.g., .docx archives, unpacked XML, documentation files) from the local workspace."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The docx skill needs to write files (e.g., unpacked XML, generated scripts, output .docx files, markdown exports) to the local workspace."
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The docx skill needs to run shell commands such as pandoc, python scripts (unpack.py / pack.py), soffice, pdftoppm, grep, and npm to process documents."
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The docx skill may need to install dependencies (pandoc, libreoffice, poppler-utils, defusedxml, docx npm package) if they are not already present."
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The docx skill requires loading skill-local documentation files (docx-js.md, ooxml.md) into the agent session as context before performing document operations."
+    }
+  ]
+}

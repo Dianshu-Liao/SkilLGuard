@@ -1,0 +1,41 @@
+{
+  "skill_metadata": {
+    "name": "employment-contract-templates",
+    "version": "0.1.0",
+    "trust_tier": 2
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., existing contract drafts or template files) from the workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write or save generated employment documents (contracts, offer letters, handbooks) to the workspace. Allow?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references external resources such as SHRM, the Department of Labor, and the EEOC. Allow fetching content from those URLs?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may load or dispatch authored sub-skills within the agent runtime. Allow?"
+    }
+  ]
+}

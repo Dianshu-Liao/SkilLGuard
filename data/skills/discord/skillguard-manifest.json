@@ -1,0 +1,46 @@
+{
+  "skill_metadata": {
+    "name": "discord",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to call the Discord API (bot token) to perform the requested action. Allow?"
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": false
+      },
+      "fallback_msg": "This skill needs to read a local file (e.g. file:///tmp/...) to upload as media, emoji, or sticker. Allow?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to fetch a remote URL (https://...) to attach as media to a Discord message. Allow?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read the Discord bot token configured for Clawdbot. Allow?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to invoke the discord tool skill to dispatch actions to Discord. Allow?"
+    }
+  ]
+}

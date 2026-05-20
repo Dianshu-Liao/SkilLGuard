@@ -1,0 +1,101 @@
+{
+  "skill_metadata": {
+    "name": "llm-evaluation",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files such as benchmark datasets, evaluation scripts, and reference documents. Allow read access within the workspace?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write evaluation results, generated metrics reports, and evaluation harness files to the workspace. Allow write access?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read existing source code files (e.g., evaluation scripts, model code) to run or extend evaluations. Allow source code read access?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify evaluation scripts, benchmark runners, and metric implementations. Allow source code write access?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute Python evaluation scripts and automated benchmark runners. Allow shell execution?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may need to install Python packages such as nltk, rouge-score, bert-score, scipy, sklearn, transformers, and detoxify. Allow package installation?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill calls external LLM APIs (e.g., OpenAI ChatCompletion with gpt-5) for LLM-as-Judge evaluation patterns. Allow external API calls?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read API keys (e.g., OpenAI API key) to authenticate calls to external LLM judge services. Allow reading secrets/credentials?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may create an interactive Python REPL session to run evaluation code interactively. Allow REPL session creation?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill executes evaluation code (metrics calculations, benchmark runs, statistical tests) inside a REPL session. Allow REPL code execution?"
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads output and computed metric results from REPL sessions. Allow reading REPL output?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill performs outbound network requests to download pre-trained models (e.g., DeBERTa) and contact external LLM judge APIs. Allow outbound network access?"
+    }
+  ]
+}

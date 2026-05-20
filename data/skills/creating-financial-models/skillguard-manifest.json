@@ -1,0 +1,85 @@
+{
+  "skill_metadata": {
+    "name": "creating-financial-models",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., financial statements, base case models, or script files) from the workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write output files (e.g., Excel workbooks, model outputs, charts) to the workspace. Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute Python scripts (dcf_model.py, sensitivity_analysis.py) to run financial computations. Allow?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read included Python scripts (dcf_model.py, sensitivity_analysis.py) from the skill package. Allow?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to start an interactive Python REPL session to run DCF, Monte Carlo, and sensitivity computations. Allow?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute financial modeling code inside a REPL session (Monte Carlo iterations, sensitivity tables, scenario calculations). Allow?"
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read output and state from the REPL session (valuation results, probability distributions, statistical summaries). Allow?"
+    },
+    {
+      "capability": "repl.reset",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may need to reset the REPL session between model runs to ensure clean state. Allow?"
+    },
+    {
+      "capability": "repl.terminate",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to close the REPL session when financial modeling is complete. Allow?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to load the authored skill runtime to dispatch financial modeling tasks. Allow?"
+    }
+  ]
+}

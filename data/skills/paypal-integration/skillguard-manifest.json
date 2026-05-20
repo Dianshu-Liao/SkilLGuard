@@ -1,0 +1,87 @@
+{
+  "skill_metadata": {
+    "name": "paypal-integration",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to call the PayPal REST API (orders, captures, subscriptions, refunds, IPN verification) to process payments. Allow this external API call?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to POST data to PayPal endpoints (e.g., token acquisition, order creation, IPN verification, refund submission). Allow this outbound POST request?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to fetch data from PayPal endpoints (e.g., order details, refund details). Allow this outbound GET request?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read PayPal credentials (client ID and client secret) to authenticate with the PayPal API. Allow access to these secrets?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read existing source code files (e.g., paypal-client.py, ipn-processor.py, recurring-billing.py) within the workspace. Allow reading these files?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify source code files (e.g., PayPal client, IPN processor, subscription management scripts) within the workspace. Allow writing these files?"
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read reference files and assets (e.g., express-checkout.md, ipn-handling.md, refund-workflows.md) within the workspace. Allow reading these files?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write generated integration files and assets to the workspace. Allow writing files within the workspace?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read environment variables (e.g., PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, mode flag) to configure PayPal API access. Allow reading environment variables?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill requires outbound network access to reach PayPal sandbox and production API endpoints. Allow outbound network connections?"
+    }
+  ]
+}

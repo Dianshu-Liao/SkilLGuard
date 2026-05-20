@@ -1,0 +1,90 @@
+{
+  "skill_metadata": {
+    "name": "shellcheck-configuration",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to run shell commands (e.g., shellcheck, find, xargs, sha256sum) to perform static analysis and linting of shell scripts. Please confirm before executing."
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read shell script files and configuration files (e.g., .shellcheckrc, *.sh) within the workspace for analysis. Please confirm before reading."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify files such as .shellcheckrc configuration files, pre-commit hooks, and cache files within the workspace. Please confirm before writing."
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may install ShellCheck via package managers (brew, apt-get) or build it from source. Please confirm before installing any packages."
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables such as SHELLCHECK_SHELL, SHELLCHECK_STRICT, and SHELLCHECK_CONFIG to determine ShellCheck configuration. Please confirm before reading environment variables."
+    },
+    {
+      "capability": "env_var.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill sets environment variables such as SHELLCHECK_SHELL, SHELLCHECK_STRICT, and SHELLCHECK_CONFIG to configure ShellCheck behavior. Please confirm before setting environment variables."
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads version-controlled shell script source files and repository contents to perform linting and static analysis. Please confirm before reading source code."
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may create or modify version-controlled shell scripts and CI/CD configuration files (e.g., GitHub Actions workflows, GitLab CI pipelines). Please confirm before writing source code."
+    },
+    {
+      "capability": "policy.install_hook",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill installs Git pre-commit hooks at .git/hooks/pre-commit to enforce ShellCheck linting before commits. Please confirm before installing any hooks."
+    },
+    {
+      "capability": "process.query",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references process inspection (e.g., ps aux, pgrep) in the context of ShellCheck examples demonstrating SC2009 fixes. Please confirm before querying processes."
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references external resources such as the ShellCheck GitHub repository, ShellCheck Wiki, and error code reference at shellcheck.net. Please confirm before fetching web content."
+    }
+  ]
+}

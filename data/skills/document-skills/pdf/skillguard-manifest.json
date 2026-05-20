@@ -1,0 +1,48 @@
+{
+  "skill_metadata": {
+    "name": "pdf",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The PDF skill needs to read PDF files and related documents from your workspace. Allow this operation?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The PDF skill needs to write output files (merged PDFs, split pages, created PDFs, extracted tables, encrypted files, watermarked documents) to your workspace. Allow this operation?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The PDF skill needs to run command-line tools such as pdftotext, qpdf, pdftk, and pdfimages to process PDF documents. Allow this operation?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The PDF skill may need to install Python packages (pypdf, pdfplumber, reportlab, pytesseract, pdf2image, pandas) or system tools (poppler-utils, pdftk). Allow this operation?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The PDF skill needs to load additional instruction files (forms.md, reference.md) to complete certain operations such as form filling. Allow this operation?"
+    }
+  ]
+}

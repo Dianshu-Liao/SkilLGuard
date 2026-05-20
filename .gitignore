@@ -1,0 +1,45 @@
+ablations/
+skill-inject/
+.env
+# Experiment outputs
+final_results/
+sandboxes/
+sandbox_archives/
+logs/
+
+# Generated figures and plotting scripts
+figures/
+scripts/plots/
+
+# Apptainer
+*.sif
+apptainer/cache/
+apptainer/smoke_sandbox/
+apptainer/*_*.err
+apptainer/*_*.log
+apptainer/*_*.out
+apptainer/build_login.log
+
+# Environment / secrets
+docker/.env
+apptainer/.env
+
+# Evolutionary optimization / RL ablations
+experiments/ablations/evolutionary_optimization.py
+experiments/ablations/grpo_injection_optimization.py
+experiments/ablations/rl_policy_gradient.py
+tests/test_evolutionary_optimization.py
+tests/test_rl_policy_gradient.py
+requirements_grpo.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+

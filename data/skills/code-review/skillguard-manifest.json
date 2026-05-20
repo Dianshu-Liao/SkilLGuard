@@ -1,0 +1,48 @@
+{
+  "skill_metadata": {
+    "name": "code-review",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The code-review skill needs to load skill references and scripts via the built-in skill loader (get_skill_reference, get_skill_script). Please confirm."
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The code-review skill needs to load the style guide reference ('style-guide.md') into the agent session. Please confirm."
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The code-review skill needs to read skill script files (check_style.py) and style guide content from the local workspace. Please confirm."
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The code-review skill needs to execute the style-checking script (check_style.py) for automated style analysis. Please confirm."
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The code-review skill needs to read version-controlled source code files to perform the review. Please confirm."
+    }
+  ]
+}

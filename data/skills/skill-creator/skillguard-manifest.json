@@ -1,0 +1,43 @@
+{
+  "skill_metadata": {
+    "name": "skill-creator",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "skill-creator needs to read local files (e.g., existing skill directories, SKILL.md files, and bundled resources) to inspect and iterate on skills."
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "skill-creator needs to create or modify files such as SKILL.md, scripts, references, and assets when building or editing a skill."
+    },
+    {
+      "capability": "filesystem.delete",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "skill-creator may delete example or unnecessary files (e.g., example_script.cjs, example_reference.md) generated during skill initialization."
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "skill-creator needs to run Node.js scripts such as init_skill.cjs and package_skill.cjs, as well as the gemini skills install command, during skill creation, packaging, and installation."
+    }
+  ]
+}

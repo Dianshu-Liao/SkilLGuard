@@ -1,0 +1,80 @@
+{
+  "skill_metadata": {
+    "name": "Agent Development",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "Agent Development needs to read files in the workspace (e.g., agent markdown files, reference docs, examples). Allow this read access?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "Agent Development needs to create or modify agent files (e.g., agents/agent-name.md) in the workspace. Allow this write access?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "Agent Development needs to run validation and test scripts (e.g., scripts/validate-agent.sh, scripts/test-agent-trigger.sh). Allow shell execution?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "Agent Development needs to read version-controlled source files and reference materials within the plugin repository. Allow source code read access?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "Agent Development needs to create or modify agent source files (e.g., agents/*.md) in the repository. Allow source code write access?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "Agent Development needs to load external reference files and example content (e.g., references/system-prompt-design.md, examples/complete-agent-examples.md) into the agent session. Allow context loading?"
+    },
+    {
+      "capability": "subagent.delegate",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "Agent Development may spawn autonomous sub-agents to handle complex multi-step agent-creation or testing tasks. Allow sub-agent delegation?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "Agent Development needs to load or dispatch authored skills within the Claude Code plugin runtime. Allow skill loading?"
+    },
+    {
+      "capability": "tool.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "Agent Development needs to inspect available tools and their schemas to advise on agent tool configuration (e.g., Read, Write, Grep, Bash). Allow tool metadata access?"
+    }
+  ]
+}

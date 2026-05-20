@@ -1,0 +1,108 @@
+{
+  "skill_metadata": {
+    "name": "mcp",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to fetch external web content (MCP protocol docs, Python SDK README, TypeScript SDK README). Allow this fetch?"
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local reference files (e.g., mcp_best_practices.md, python_mcp_server.md, node_mcp_server.md, evaluation.md). Allow reading within the workspace?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify source files (server implementation files, evaluation XML, package.json, tsconfig.json). Allow writing within the workspace?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read version-controlled source code files to review and refine the MCP server implementation. Allow reading source code?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify version-controlled source code files for the MCP server. Allow writing source code?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to run shell commands (e.g., npm run build, python -m py_compile, timeout 5s python server.py). Allow shell execution?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may call external third-party APIs when building and testing MCP server integrations. Allow external API calls?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables for secure handling of authentication tokens and API keys. Allow reading environment variables?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill loads external content (MCP protocol docs, SDK READMEs, local reference guides) into the agent session. Allow loading external context?"
+    },
+    {
+      "capability": "tool.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill inspects available MCP tool schemas and metadata during evaluation (Phase 4 tool inspection). Allow reading tool metadata?"
+    },
+    {
+      "capability": "tool.invoke",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill invokes registered tools during evaluation (read-only operations to explore data for evaluation questions). Allow invoking tools?"
+    },
+    {
+      "capability": "process.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may start the MCP server process in tmux for testing. Allow creating host processes?"
+    },
+    {
+      "capability": "mcp.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill invokes MCP tools via the Model Context Protocol server (evaluation harness, read-only content exploration). Allow MCP tool execution?"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "skill_metadata": {
+    "name": "sql-optimization-patterns",
+    "version": "0.1.0",
+    "trust_tier": 2
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., reference guides, checklists, and SQL scripts listed in the Resources section). Allow read access to the workspace?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may write optimized query files, index strategy checklists, or analysis results to the workspace. Allow write access?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read application source code to identify N+1 query patterns, ORM usage, and other database access patterns. Allow source code read access?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may rewrite application code to replace N+1 query patterns with batch loading or JOIN-based queries. Allow source code modifications?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references executable SQL scripts (e.g., analyze-slow-queries.sql, index-recommendations.sql) and database maintenance commands (VACUUM, ANALYZE, REINDEX). Allow shell or script execution?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references companion skill resources (e.g., postgres-optimization-guide.md, query-plan-analysis.md). Allow loading referenced skills or resource files?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill references external guides, checklists, and scripts that may be loaded as context (e.g., references/postgres-optimization-guide.md, assets/index-strategy-checklist.md). Allow loading this external context?"
+    }
+  ]
+}

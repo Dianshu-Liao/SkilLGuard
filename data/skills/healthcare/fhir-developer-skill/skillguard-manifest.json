@@ -1,0 +1,62 @@
+{
+  "skill_metadata": {
+    "name": "fhir-developer-skill",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., reference files, resource examples, scripts) within the workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify files (e.g., scaffolded FHIR project files, source code) within the workspace. Allow?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read version-controlled source code files to assist with FHIR API development. Allow?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to create or modify source code files (e.g., FastAPI/Express FHIR endpoints, Pydantic models). Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute a shell script (e.g., 'python scripts/setup_fhir_project.py my_fhir_api') to scaffold a new FHIR API project. Allow?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to load external reference content (e.g., references/resource-examples.md, references/smart-auth.md, references/pagination.md, references/bundles.md) into context. Allow?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to dispatch to the built-in skill loader to activate the fhir-developer-skill. Allow?"
+    }
+  ]
+}

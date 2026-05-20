@@ -1,0 +1,111 @@
+{
+  "skill_metadata": {
+    "name": "rag-implementation",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local document files and reference assets (e.g., ./docs, ./chroma_db, YAML configs, Python scripts) to build and configure the RAG pipeline. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write files such as vector store persistence directories (e.g., ./chroma_db), pipeline scripts, and configuration templates. Allow?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read version-controlled source code files to inspect existing RAG pipeline implementations and project structure. Allow?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to create or modify source code files such as retriever pipelines, embedding configurations, and RAG chain implementations. Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute shell commands to run Python scripts, install dependencies, launch vector database services, and test RAG pipelines. Allow?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to install Python packages such as langchain, chromadb, pinecone-client, weaviate-client, sentence-transformers, and faiss to support RAG system components. Allow?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to call external APIs including OpenAI Embeddings, OpenAI LLM completions, Pinecone vector database, and Cohere Rerank endpoints during normal RAG operation. Allow?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read API keys (e.g., OpenAI API key, Pinecone API key) from environment variables or configuration to authenticate with external services. Allow?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read environment variables such as API keys and service endpoints required for OpenAI, Pinecone, Weaviate, and other RAG components. Allow?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs outbound network access to reach OpenAI, Pinecone, Weaviate, Cohere, and other external vector database or embedding service endpoints. Allow?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may create an interactive Python REPL session to iteratively test retrieval chains, embeddings, and query results. Allow?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute Python code inside a REPL session to run RAG pipeline steps, evaluate metrics, and demonstrate retrieval patterns. Allow?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to load external reference documents (e.g., vector-databases.md, embeddings.md, retrieval-strategies.md) into the agent session as context. Allow?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may dispatch or load authored sub-skills referenced in the resources section (e.g., retriever-pipeline.py, embedding-models.md). Allow?"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "skill_metadata": {
+    "name": "seo-review",
+    "version": "0.1.0",
+    "trust_tier": 2
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "seo-review needs to read concept page files (e.g., .mdx frontmatter, headings, body content) from the local workspace to perform the audit. Allow this read?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "seo-review needs to read version-controlled source files (MDX concept pages, docs.json navigation config) to inspect slug names, heading structure, and internal links. Allow this read?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "seo-review needs to run shell commands (e.g., grep -r to search for internal links and orphan-page detection) as described in the audit methodology. Allow shell execution?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "seo-review may write the completed SEO audit report document to the local workspace. Allow this file write?"
+    }
+  ]
+}

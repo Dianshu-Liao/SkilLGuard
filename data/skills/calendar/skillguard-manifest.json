@@ -1,0 +1,48 @@
+{
+  "skill_metadata": {
+    "name": "calendar",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The calendar skill needs to read ICS/calendar files from your workspace. Allow this operation?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The calendar skill needs to write or create ICS/calendar files in your workspace. Allow this operation?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The calendar skill needs to execute shell commands (e.g., pip install, Python one-liners for ICS validation). Allow this operation?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The calendar skill needs to install Python packages (icalendar, pytz) to support calendar operations. Allow this operation?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The calendar skill may need to fetch external resources such as RFC specifications or timezone data. Allow this operation?"
+    }
+  ]
+}

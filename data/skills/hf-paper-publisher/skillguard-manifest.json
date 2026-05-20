@@ -1,0 +1,83 @@
+{
+  "skill_metadata": {
+    "name": "hugging-face-paper-publisher",
+    "version": "1.0.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., abstract.txt, citation.txt, paper.md, README.md) from your workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to create or modify local files (e.g., paper.md, paper.html, README.md with updated YAML frontmatter). Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to execute shell commands and Python scripts (e.g., paper_manager.py, huggingface-cli, uv add). Allow?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read environment variables (specifically HF_TOKEN) to authenticate with Hugging Face. Allow?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read the HF_TOKEN secret/credential to authenticate API calls to Hugging Face Hub. Allow?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to fetch data from external URLs (arXiv, Hugging Face Hub) to check paper status, retrieve metadata, and search papers. Allow?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to submit data to Hugging Face Hub APIs (e.g., indexing papers, linking papers, claiming authorship, toggling visibility). Allow?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to call external APIs (Hugging Face Hub API, arXiv API) to manage papers, retrieve metadata, and perform linking operations. Allow?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to install Python packages (huggingface_hub, pyyaml, requests, markdown, python-dotenv) via uv or pip. Allow?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill requires outbound network access to reach Hugging Face Hub and arXiv services. Allow?"
+    }
+  ]
+}

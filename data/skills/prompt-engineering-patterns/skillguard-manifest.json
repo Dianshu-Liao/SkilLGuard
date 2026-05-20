@@ -1,0 +1,83 @@
+{
+  "skill_metadata": {
+    "name": "prompt-engineering-patterns",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., prompt templates, few-shot example datasets, reference docs). Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write files (e.g., saving optimized prompt templates, versioned prompt files, or output artifacts). Allow?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill needs to read version-controlled source code files (e.g., prompt scripts or optimization tooling). Allow?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may create or modify versioned source code files for prompts or optimization scripts. Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may execute scripts such as 'scripts/optimize-prompt.py' or run evaluation pipelines. Allow?"
+    },
+    {
+      "capability": "repl.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may start an interactive Python REPL session to run prompt engineering code examples. Allow?"
+    },
+    {
+      "capability": "repl.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may execute code inside an interactive REPL session (e.g., prompt template rendering, few-shot selection). Allow?"
+    },
+    {
+      "capability": "repl.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may read output or state from an active REPL session to evaluate prompt results. Allow?"
+    },
+    {
+      "capability": "context.load",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill loads external content such as retrieved context, few-shot examples, and reference documents into the agent session. Allow?"
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may load or dispatch authored sub-skills (e.g., the prompt template library or optimization scripts). Allow?"
+    }
+  ]
+}

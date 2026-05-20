@@ -1,0 +1,90 @@
+{
+  "skill_metadata": {
+    "name": "hugging-face-dataset-creator",
+    "version": "2.0.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (e.g., system_prompt.txt, training JSON example files) from the workspace. Allow?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to write files to the workspace (e.g., scripts/dataset_manager.py, config files, example JSON sets). Allow?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill executes shell commands such as 'python scripts/dataset_manager.py' and 'uv add huggingface_hub'. Allow shell execution?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill installs the 'huggingface_hub' package via 'uv add huggingface_hub'. Allow package installation?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads the HF_TOKEN environment variable to authenticate with the Hugging Face Hub. Allow reading environment variables?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads the HF_TOKEN secret (a Write-access Hugging Face token) to authenticate API calls. Allow reading this secret?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill calls the Hugging Face Hub API to initialize repositories, upload configs, and stream row data. Allow external API calls to Hugging Face?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill submits dataset rows, configuration, and repository metadata to Hugging Face Hub endpoints. Allow outbound write-like web requests?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill fetches dataset statistics and metadata from Hugging Face Hub. Allow outbound HTTP read requests to Hugging Face?"
+    },
+    {
+      "capability": "mcp.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill may invoke HF MCP server tools (e.g., search_datasets, get_dataset_details) for discovery and metadata retrieval. Allow MCP tool invocations?"
+    },
+    {
+      "capability": "tool.invoke",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill invokes registered tools such as HF MCP server tools for dataset discovery. Allow tool invocations?"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "skill_metadata": {
+    "name": "system-info",
+    "version": "0.1.0",
+    "trust_tier": 3
+  },
+  "permissions": [
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The system-info skill needs to execute Python scripts (get_system_info.py, list_directory.py) on the host. Please confirm this action."
+    },
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "The system-info skill needs to read filesystem entries (list directory contents at specified paths). Please confirm this action."
+    },
+    {
+      "capability": "tool.skill",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "The system-info skill needs to invoke the agent runtime skill loader (run_skill_script) to dispatch its scripts. Please confirm this action."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "skill_metadata": {
+    "name": "hugging-face-evaluation-manager",
+    "version": "1.3.0",
+    "trust_tier": 4
+  },
+  "permissions": [
+    {
+      "capability": "filesystem.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill needs to read local files (scripts, .env, README content). Allow filesystem read access?"
+    },
+    {
+      "capability": "filesystem.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may write local files (e.g., .env, generated YAML, output artifacts). Allow filesystem write access?"
+    },
+    {
+      "capability": "shell.execute",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill executes shell commands including `uv run`, `nvidia-smi`, `hf jobs uv run`, and Python scripts. Allow shell execution?"
+    },
+    {
+      "capability": "source_code.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill reads Python scripts in the `scripts/` directory. Allow reading version-controlled source files?"
+    },
+    {
+      "capability": "source_code.write",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": {
+        "workspace_only": true
+      },
+      "fallback_msg": "This skill may generate or modify Python evaluation scripts. Allow writing version-controlled source files?"
+    },
+    {
+      "capability": "commit.push",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill can push changes directly to Hugging Face model repositories (--apply flag). Allow pushing commits to remote repositories?"
+    },
+    {
+      "capability": "web.fetch",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill fetches README content, model card data, and PR listings from Hugging Face Hub. Allow outbound HTTP read requests?"
+    },
+    {
+      "capability": "web.post",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill submits evaluation results and creates pull requests on Hugging Face Hub. Allow write-like HTTP/HTTPS requests?"
+    },
+    {
+      "capability": "external_api.call",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill calls the Artificial Analysis API to import benchmark scores. Allow calls to external third-party API endpoints?"
+    },
+    {
+      "capability": "process.query",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill inspects GPU availability via `nvidia-smi` and checks for `uv` installation. Allow querying host process/hardware state?"
+    },
+    {
+      "capability": "process.create",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill launches Python subprocesses and `uv run` child processes for evaluation scripts. Allow creating new host processes?"
+    },
+    {
+      "capability": "package.install",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill installs Python dependencies automatically via PEP 723 script headers with `uv run` (e.g., lighteval, vllm, torch). Allow package installation?"
+    },
+    {
+      "capability": "secrets.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads HF_TOKEN and AA_API_KEY from environment variables and .env files. Allow reading sensitive secrets/API keys?"
+    },
+    {
+      "capability": "env_var.read",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill reads environment variables such as HF_TOKEN and AA_API_KEY. Allow reading environment variables?"
+    },
+    {
+      "capability": "network.client",
+      "effect": "confirm",
+      "priority": 20,
+      "constraints": null,
+      "fallback_msg": "This skill makes outbound network requests to Hugging Face Hub and Artificial Analysis API. Allow outbound network client access?"
+    }
+  ]
+}
